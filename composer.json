@@ -1,0 +1,20 @@
+{
+  "name": "sergey_pavlov/panorama_test",
+  "description": "panorama_test",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Sergey Pavlov",
+      "email": "savl.abax@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "sergey_pavlov\\panorama_test\\": "src/"
+    }
+  }
+}

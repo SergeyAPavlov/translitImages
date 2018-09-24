@@ -1,0 +1,7 @@
+vendor
+data
+composer.phar
+.idea
+env.php
+text.txt
+tests/text.txt
