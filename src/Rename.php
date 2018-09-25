@@ -10,6 +10,7 @@ namespace sergey_pavlov\panorama_test;
 use ZipArchive;
 
 
+
 /**
  * Class Rename
  * @package sergey_pavlov\panorama_test
@@ -68,7 +69,7 @@ class Rename
         }
 
         $text = $zip->getFromIndex($zipIndex);
-        $put = App::putContents($newName, $text);
+        $put = TranslitImages::putContents($newName, $text);
 
         if (!($newName == $name) AND $put) {
             $this->namesTable[$name] = $newName;
