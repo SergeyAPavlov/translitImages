@@ -23,6 +23,7 @@ if (!empty($_REQUEST['submit']) AND !empty($_FILES)) {
     $archive_name = $app->remakeArchive($dirname, $filename);
 
     $fields['newname'] = $archive_name;
+    $fields['log'] = TranslitImages::$log;
 
 }
 View::display('index.php', $fields);

@@ -60,7 +60,8 @@ class TranslitImages
 
         $archive_name = uniqid() . "_.zip";
         if ($newZip->open($archive_name, ZipArchive::CREATE) === true) {
-            $newZip->addDirectory($dirname);
+            $files = $round->globAllFiles($dirname . '/*');
+            $newZip->addDirectory($files, $dirname);
             $close = $newZip->close();
             if (!$close) {
                 self::$log[] = 'zip close error: file ' . $archive_name;

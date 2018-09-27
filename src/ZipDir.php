@@ -15,9 +15,21 @@ namespace sergey_pavlov\panorama_test;
 class zipDir extends \ZipArchive
 {
 
-    public function addDirectory($dir)
+    /**
+     * @param $dir
+     */
+    public function addDirectory($files, $dir)
     { // adds directory
-        $this->addGlob($dir . '/*.*', 0, ['remove_path' => $dir]);
+
+        foreach ($files as $file) {
+            $patternLength = strlen($dir . '/');
+            $localName = substr($file, $patternLength);
+            if (is_dir($file)) {
+                $this->addDirectory($localName);
+            } else {
+                $this->addFile($file, $localName);
+            }
+        }
     }
 }
 

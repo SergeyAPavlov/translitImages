@@ -16,6 +16,9 @@
     if (!empty($data['newname'])) {
         echo 'Файл для скачивания: <a href="' . $data['newname'] . '"> скачать </a>';
     }
+    if (!empty($data['log'])) {
+        print_r($data['log']);
+    }
     ?>
 </h4>
 <form method="POST" action="" enctype="multipart/form-data">
